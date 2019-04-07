@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'isu-meetup';
+  title = 'ISU-meetup';
+
+  color = 'red';
+
+  meetupList: any[] = [
+    { 'id': 1, 'name': 'first lection' },
+    { 'id': 2, 'name': 'second lection'},
+    { 'id': 3, 'name': 'third lection'}
+  ];
 }
