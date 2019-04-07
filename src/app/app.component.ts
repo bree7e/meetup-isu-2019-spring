@@ -10,6 +10,8 @@ export class AppComponent {
 
   color = 'red';
 
+  today: number = Date.now();
+
   meetupList: any[] = [
     { 'id': 1, 'name': 'first lection' },
     { 'id': 2, 'name': 'second lection'},
