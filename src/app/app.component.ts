@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { meetupList } from './meetup';
+import { MeetUpEvent } from './meetup.interface';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +13,6 @@ export class AppComponent {
   color = 'red';
 
   today: number = Date.now();
-
-  meetupList: any[] = [
-    { 'id': 1, 'name': 'first lection' },
-    { 'id': 2, 'name': 'second lection'},
-    { 'id': 3, 'name': 'third lection'}
-  ];
+  /** список событий */
+  meetupList: MeetUpEvent[] = meetupList;
 }
