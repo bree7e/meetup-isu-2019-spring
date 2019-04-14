@@ -12,5 +12,11 @@
 }
 .isp-content {
   min-height: calc(100vh - 128px);
+  max-width: 960px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
 }
-

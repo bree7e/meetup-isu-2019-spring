@@ -1,0 +1,38 @@
+<form class="meetup-create" (ngSubmit)="submitForm(masha)" #masha="ngForm">
+  <mat-card>
+    <mat-card-content>
+      <h3 mat-dialog-title>
+        Создать мероприятие
+      </h3>
+      <mat-form-field class="meetup-create__field">
+        <input matInput placeholder="Название" ngModel name="name" />
+      </mat-form-field>
+      <mat-form-field class="meetup-create__field">
+        <input matInput placeholder="Адрес" ngModel name="address" />
+      </mat-form-field>
+      <mat-form-field class="meetup-create__field">
+        <textarea
+          matInput
+          placeholder="Описание"
+          ngModel
+          name="description"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="meetup-create__field">
+        <input
+          ngModel
+          name="from_date"
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Дата"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-checkbox ngModel name="published">Опубликовано</mat-checkbox>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button type="submit" color="primary">Создать</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

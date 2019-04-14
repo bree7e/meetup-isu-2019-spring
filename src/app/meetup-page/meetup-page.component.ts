@@ -10,7 +10,7 @@ export class MeetupPageComponent implements OnInit {
   meetupId: string;
 
   constructor(
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute // <== Зависимость
   ) { }
 
   ngOnInit() {
