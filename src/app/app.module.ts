@@ -12,7 +12,7 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatInputModule
+  MatInputModule,
   MatDatepickerModule,
   MatCheckboxModule,
   MatNativeDateModule,
