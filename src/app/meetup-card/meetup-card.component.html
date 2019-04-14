@@ -1,0 +1,17 @@
+<mat-card class="isp-event">
+  <mat-card-title>{{ meetup.name }}</mat-card-title>
+  <mat-card-content>{{ meetup.description }}</mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-flat-button
+      color="primary"
+      class="isp-event__button"
+      [routerLink]="meetup.id"
+    >
+      Подробнее
+  </button>
+    <button mat-icon-button (click)="deleteMeetup(meetup.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

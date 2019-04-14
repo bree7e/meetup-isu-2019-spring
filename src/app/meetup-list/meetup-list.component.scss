@@ -1,0 +1,37 @@
+.isp-event-list {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.isp-event-list__header {
+  margin: 30px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.isp-event-list__button {
+  margin-left: 7px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.isp-event-list__categories {
+  padding-bottom: 1.34375em;
+  margin: .25em 0;
+  display: flex;
+  justify-content: space-between;
+
+  .mat-button-toggle-group {
+    margin-right: 20px;
+
+    .mat-button-toggle {
+      display: flex;
+    }
+  }
+}
+
+.isp-event-list__tile {
+  overflow: visible;
+}

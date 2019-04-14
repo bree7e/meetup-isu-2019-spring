@@ -1,0 +1,10 @@
+<h3 class="isp-events__title">{{ title }}</h3>
+
+<div class="isp-events__list">
+  <mat-grid-list gutterSize="20" cols="5" rowHeight="190px">
+    <mat-grid-tile *ngFor="let meetup of meetups" class="isp-event-list__tile">
+      <app-meetup-card [meetup]="meetup" (remove)="deleteMeetup($event)">
+      </app-meetup-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

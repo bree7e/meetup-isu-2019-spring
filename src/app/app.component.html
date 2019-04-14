@@ -1,32 +1,9 @@
 <header>
-  <mat-toolbar color="primary">
-    <a
-      mat-button
-      class="isp-logo"
-      routerLink='/'
-    >
-      <img
-        class="isp-logo__img"
-        src="/assets/images/isp_logo.svg"
-        alt="go to main page"
-      >
-    </a>
-    <div class="isp-title">
-      <h1>Конференции и мероприятия ISPsystem</h1>
-    </div>
-  </mat-toolbar>
+  <app-menu></app-menu>
 </header>
 
 <main class="isp-content">
-  <!--<mat-grid-list gutterSize="20" cols="5" rowHeight="190px">
-    <mat-grid-tile>
-      <mat-card>Hello kitty</mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>-->
-  <button [disabled]="true" [style.color]="color">Click me</button>
-
   <router-outlet></router-outlet>
-  <div class="isp-footer__placeholder"></div>
 </main>
 
 <footer>
