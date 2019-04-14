@@ -9,10 +9,6 @@ import { MeetUpEvent } from './meetup.interface';
 })
 export class AppComponent {
   title = 'ISU-meetup';
-
-  color = 'red';
-
-  today: number = Date.now();
   /** список событий */
   meetupList: MeetUpEvent[] = meetupList;
 }

@@ -1,0 +1,15 @@
+.isp-logo {
+  margin: 0;
+  min-width: 111px;
+  height: 40px;
+  border-radius: 4px;
+}
+.isp-logo__img {
+  object-fit: contain;
+  object-position: center;
+}
+.isp-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}

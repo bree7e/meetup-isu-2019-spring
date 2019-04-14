@@ -1,0 +1,52 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: table;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 2px 9px 2px rgba(0, 0, 0, 0.3), 0 0px 0px 0 rgba(0, 0, 0, 0.2),
+      0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.isp-event-list__card {
+  height: 100%;
+}
+
+.isp-event-list__card_type {
+  &_today {
+    background-color: #f0f4c3;
+  }
+  &_past {
+    background-color: #e0e0e0;
+    color: #696969;
+  }
+  &_hide {
+    opacity: 0.2;
+
+    &:hover {
+      box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    }
+  }
+}
+
+.isp-event-list__content-text {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 43px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.isp-event-list__actions {
+  outline: none;
+  float: right;
+}
