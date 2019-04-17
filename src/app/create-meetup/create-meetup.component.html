@@ -5,13 +5,15 @@
         Создать мероприятие
       </h3>
       <mat-form-field class="meetup-create__field">
-        <input matInput placeholder="Название" ngModel name="name" />
+        <input matInput placeholder="Название" ngModel name="name" required />
       </mat-form-field>
       <mat-form-field class="meetup-create__field">
         <input matInput placeholder="Адрес" ngModel name="address" />
       </mat-form-field>
       <mat-form-field class="meetup-create__field">
         <textarea
+          required
+          minlength="10"
           matInput
           placeholder="Описание"
           ngModel
@@ -32,7 +34,7 @@
       <mat-checkbox ngModel name="published">Опубликовано</mat-checkbox>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button type="submit" color="primary">Создать</button>
+      <button mat-flat-button type="submit" color="primary" [disabled]="createEventForm.invalid" >Создать</button>
     </mat-card-actions>
   </mat-card>
 </form>
