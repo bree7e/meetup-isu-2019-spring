@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { MeetupService } from '../meetup.service';
 
 @Component({
@@ -8,6 +8,15 @@ import { MeetupService } from '../meetup.service';
   styleUrls: ['./create-meetup.component.scss']
 })
 export class CreateMeetupComponent {
+  createForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
+    from_date: new FormControl('', Validators.required),
+    published: new FormControl(false),
+  });
+
+  get vasya() { return this.createForm.get('name'); }
 
   constructor(private _meetupService: MeetupService) { }
 

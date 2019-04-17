@@ -1,32 +1,35 @@
-<form class="meetup-create" (ngSubmit)="submitForm(createEventForm)" #createEventForm="ngForm">
+<form
+  class="meetup-create"
+  (ngSubmit)="submitForm(createForm)"
+  [formGroup]="createForm"
+>
   <mat-card>
     <mat-card-content>
       <h3 mat-dialog-title>
         Создать мероприятие
       </h3>
-      <div *ngIf="vasya.invalid && (vasya.dirty || vasya.touched)" style="color: red;">
-          Name is required.
+      <div
+        *ngIf="vasya.invalid && (vasya.dirty || vasya.touched)"
+        style="color: red;"
+      >
+        Name is required.
       </div>
       <mat-form-field class="meetup-create__field">
-        <input matInput placeholder="Название" #vasya="ngModel" ngModel name="name" required />
+        <input matInput placeholder="Название" formControlName="name" />
       </mat-form-field>
       <mat-form-field class="meetup-create__field">
-        <input matInput placeholder="Адрес" ngModel name="address" />
+        <input matInput placeholder="Адрес" formControlName="address" />
       </mat-form-field>
       <mat-form-field class="meetup-create__field">
         <textarea
-          required
-          minlength="10"
           matInput
           placeholder="Описание"
-          ngModel
-          name="description"
+          formControlName="description"
         ></textarea>
       </mat-form-field>
       <mat-form-field class="meetup-create__field">
         <input
-          ngModel
-          name="from_date"
+          formControlName="from_date"
           matInput
           [matDatepicker]="picker"
           placeholder="Дата"
@@ -34,10 +37,17 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <mat-checkbox ngModel name="published">Опубликовано</mat-checkbox>
+      <mat-checkbox formControlName="published">Опубликовано</mat-checkbox>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button type="submit" color="primary" [disabled]="createEventForm.invalid" >Создать</button>
+      <button
+        mat-flat-button
+        type="submit"
+        color="primary"
+        [disabled]="createForm.invalid"
+      >
+        Создать
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>

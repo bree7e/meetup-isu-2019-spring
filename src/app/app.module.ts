@@ -27,7 +27,7 @@ import { MeetupCardComponent } from './meetup-card/meetup-card.component';
 import { Lection3Component } from './lection3/lection3.component';
 import { MenuComponent } from './menu/menu.component';
 import { CreateMeetupComponent } from './create-meetup/create-meetup.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     AppRoutingModule,
     MatCheckboxModule,
