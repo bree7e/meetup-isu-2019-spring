@@ -4,8 +4,11 @@
       <h3 mat-dialog-title>
         Создать мероприятие
       </h3>
+      <div *ngIf="vasya.invalid && (vasya.dirty || vasya.touched)" style="color: red;">
+          Name is required.
+      </div>
       <mat-form-field class="meetup-create__field">
-        <input matInput placeholder="Название" ngModel name="name" required />
+        <input matInput placeholder="Название" #vasya="ngModel" ngModel name="name" required />
       </mat-form-field>
       <mat-form-field class="meetup-create__field">
         <input matInput placeholder="Адрес" ngModel name="address" />
