@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { meetupList } from '../meetup';
 import { MeetUpEvent } from '../meetup.interface';
+import { MeetupService } from '../meetup.service';
 
 @Component({
   selector: 'app-meetup-list',
@@ -9,16 +9,20 @@ import { MeetUpEvent } from '../meetup.interface';
   styleUrls: ['./meetup-list.component.scss']
 })
 export class MeetupListComponent implements OnInit {
-  title = 'Meetups list';
+  title = 'Meetup list';
   meetups: MeetUpEvent[];
 
-  constructor() {}
+  constructor(private _meetupService: MeetupService) {}
 
   ngOnInit() {
-    this.meetups = meetupList;
+    this.loadList();
   }
 
   deleteMeetup(id: number) {
-    this.meetups = this.meetups.filter(m => m.id !== id);
+    this._meetupService.remove(id);
+  }
+
+  loadList(): void {
+    this.meetups = this._meetupService.getList();
   }
 }

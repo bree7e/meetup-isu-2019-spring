@@ -6,16 +6,18 @@ import { meetupList } from './meetup';
 @Injectable({
   providedIn: 'root'
 })
-export class MeetUpEventService {
-  private _meetupsList: MeetUpEvent[] = meetupList;
+export class MeetupService {
+  private _meetupList: MeetUpEvent[];
 
-  constructor() { }
+  constructor() {
+    this._meetupList = meetupList;
+   }
 
   /**
    * Получить список мероприятий
    */
   getList(): MeetUpEvent[] {
-    return this._meetupsList.slice();
+    return this._meetupList.slice();
   }
 
  /**
@@ -23,13 +25,21 @@ export class MeetUpEventService {
    * @param id - номер мероприятия
    */
   get(id: number): MeetUpEvent {
-    return this._meetupsList.find(m => m.id === id);
+    return this._meetupList.find(m => m.id === id);
+  }
+
+ /**
+   * Удалить мероприятие
+   * @param id - номер мероприятия
+   */
+  remove(id: number): void {
+    this._meetupList = this._meetupList.filter(m => m.id !== id);
   }
 
   /**
    * Создать мероприятие
    */
   create(m: MeetUpEvent): void {
-    this._meetupsList.push(m);
+    this._meetupList.unshift(m);
   }
 }

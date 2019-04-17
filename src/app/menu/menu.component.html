@@ -2,17 +2,19 @@
   <a mat-button class="isp-logo" routerLink="/">
     <img
       class="isp-logo__img"
+      height="40"
       src="/assets/images/isp_logo.svg"
       alt="go to main page"
     />
   </a>
 
   <div class="isp-title">
-    <h1>Мероприятия ISPsystem</h1>
+    <h1>Мероприятия</h1>
   </div>
 
   <button mat-button [matMenuTriggerFor]="menu"> Меню</button>
   <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/lection4">Лекция 4</button>
     <button mat-menu-item routerLink="/meetup">Список мероприятий</button>
     <button mat-menu-item routerLink="/about">О проекте</button>
   </mat-menu>
